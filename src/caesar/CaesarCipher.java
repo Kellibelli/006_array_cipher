@@ -1,5 +1,5 @@
 package caesar;
-//For tyler
+
 public class CaesarCipher {
 	
 	private String alpha = "abcdefghijklmnopqrstuvwxyz";
@@ -38,6 +38,11 @@ public class CaesarCipher {
 			//System.out.println("index = " + index);
 			
 			keyAdded = index + key;
+			
+			if (keyAdded >= alpha.length()) {
+				keyAdded-=alpha.length();
+				
+			}
 			
 			System.out.println("encoded is: " + alpha.charAt(keyAdded));
 			
