@@ -41,7 +41,8 @@ public class CaesarCipher {
 			keyAdded = index + key;
 			
 			keyAdded = (index + key) % alpha.length();
-			
+			if (keyAdded == 26)
+				keyAdded = 27;
 			//System.out.println("encoded is: " + alpha.charAt(keyAdded));
 			secretText += alpha.charAt(keyAdded);
 		}
