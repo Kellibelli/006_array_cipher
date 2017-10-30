@@ -17,7 +17,7 @@ public class BeginHere {
 				null, 
 				selectionsArray, 
 				showFirst);
-				if (selection == null) selection = "Cancelled" ;// .equals doesn't work, null is not a String
+				if (selection == null) selection = "Cancelled";// .equals doesn't work, null is not a String
 				JOptionPane.showMessageDialog(null, "You have selected: " + selection);
 
 				switch (selection) { // switch on String allowed in Java 7 and higher
@@ -38,6 +38,7 @@ public class BeginHere {
 				case "Exit":
 					JOptionPane.showMessageDialog(null, 
 						"We are now in the Exit switch block - so add some code already to get us out of here!");
+					System.exit(0);
 					break;
 				default:
 					JOptionPane.showMessageDialog(null, 
