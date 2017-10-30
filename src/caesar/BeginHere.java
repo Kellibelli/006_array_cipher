@@ -42,26 +42,30 @@ public class BeginHere {
 					break;
 				default:
 					JOptionPane.showMessageDialog(null, 
-						"We are now in the Unknown Case or Cancelled switch block - what do you want to do?");
+						"Ok goodbye then!");
+					System.exit(0);
 		}
 		//after the 'break' continue with the following code
-				
-		String msg = "Would you like to encode a plain text message?";
-		int confirm = JOptionPane.showConfirmDialog(null, msg);
-		Scanner kbd = new Scanner(System.in);
-		
+		//Scanner kbd = new Scanner(System.in);
 		CaesarCipher myCipher = new CaesarCipher();
 		
 		
 		
-		System.out.println("Please enter the plain text to encode:");
-		String plainText = kbd.nextLine().toLowerCase();
+		//System.out.println("Please enter the plain text to encode:");
+		//String plainText = kbd.nextLine().toLowerCase();
+		
+		//JOptionPane.showMessageDialog(null, "Please enter the plain text to encode:");
+		String plainText = JOptionPane.showInputDialog("Please enter plain text").toLowerCase();
+		JOptionPane.showMessageDialog(null, "You have entered this for plain text: " + plainText);
 
-		System.out.println("Please enter the key:");
-		int key = kbd.nextInt();
+		//System.out.println("Please enter the key:");
+		int key = Integer.parseInt( JOptionPane.showInputDialog("Please enter the key:"));
+		//int key = kbd.nextInt();
+		JOptionPane.showMessageDialog(null, "You have entered this for your key: " + key);
 
 		String codedText = myCipher.encode(plainText, key);
-		System.out.println("Your secret message is: " + codedText);
+		JOptionPane.showMessageDialog(null, "Your secret message is: " + codedText);
+		//System.out.println("Your secret message is: " + codedText);
 
 	}
 
